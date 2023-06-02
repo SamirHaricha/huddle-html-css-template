@@ -1,0 +1,283 @@
+/* varible ----------------------------------------------------------------------------------*/
+:root{
+    --ButtonColorPink: hsl(322, 100%, 66%);
+    --ColorPale: hsl(193, 100%, 98%);
+    --BlueDarkColor: hsl(192, 100%, 9%);
+    --ParagraphBlueColor: hsl(208, 11%, 55%);
+}
+/* end variable -----------------------------------------------------------------------------*/
+/*start global rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    Font-size: 18px;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1440px) {
+    .container {
+      width: 1400px;
+    }
+  }
+.main-heading h2{
+    color: var(--BlueDarkColor);
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.main-heading p{
+    color: var(--ParagraphBlueColor);
+    line-height: 2;
+    text-transform: capitalize;
+}
+/* end global rules ------------------------------------------------------------------------------*/
+/*start header */
+.header{
+    position: relative;
+    overflow: hidden;
+}
+.header::before{
+    content: url(../images/bg-hero-desktop.svg);
+    position: absolute;
+    z-index: 5;
+}
+.header::after{
+    content: "";
+    position: absolute;
+    background-color: var(--ColorPale);
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+.header .container{
+    z-index: 5;
+    position: relative;
+    padding-bottom: 70px
+}
+.header nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.header nav input[type=submit]{
+    font-size: 14px;
+    padding: 10px 50px;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 0px;
+}
+.header .content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.header .content .main-heading{
+    flex-basis: 40%;
+    margin: auto 0;
+}
+.header .content .main-heading h2{
+    color: var(--BlueDarkColor);
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.header .content .main-heading p{
+    color: var(--BlueDarkColor);
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.header .content .main-heading input{
+    border: none;
+    background-color: var(--ButtonColorPink);
+    padding: 15px 50px;
+    border-radius: 50px;
+    color: white;
+    font-size: 15px;
+}
+.header .content img{
+    height: 500px;
+    flex-basis: 40%;
+}
+@media (max-width: 768px){
+    .header::before{
+        content: url(../images/bg-hero-mobile.svg);
+        position: absolute;
+    }
+    .header .logo{
+        width: 120px;
+    }
+    .header .content{
+        flex-direction: column;
+        text-align: center;
+    }
+    .header nav input[type=submit]{
+        padding: 10px 20px;
+    }
+    .header .content .main-heading{
+        margin-bottom: 50px;
+    }
+}
+/* end gheader -------------------------------------------------------------------------------------*/
+
+/*--start section ----------------------------------------------------------------------------------*/
+.section{
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.section .container .box{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin: 40px auto;
+    box-shadow: 0px 0px 10px -5px;
+    padding: 50px 0 50px 50px;
+    border-radius: 10px;
+}
+.section .box .main-heading{
+    flex-basis: 45%;
+    align-self: center;
+}
+.section .box img{
+    height: 250px;
+}
+.section .container .last-box{
+    position: relative;
+    left: 50%;
+    bottom: -115px;
+    transform: translateX(-50%);
+    text-align: center;
+    box-shadow: 0px 0px 10px -5px;
+    background-color: white;
+    border-radius: 30px;
+    width: 800px;
+    padding: 40px 0;
+    z-index: 10;
+}
+.section .container .last-box h2{
+    color: var(--BlueDarkColor);
+}
+.section .container .last-box input{
+    margin-top: 30px;
+    font-size: 18px;
+    background-color: var(--ButtonColorPink);
+    color: white;
+    padding: 15px 70px;
+    border: none;
+    border-radius: 30px;
+}
+@media (max-width:768px) {
+    .section .container .box{
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px;
+    }
+    .section .box img{
+        height: 200px;
+        margin-bottom: 50px;
+    }
+    .section .container .last-box {
+        width: 350px;
+    }
+    .section .container .last-box h2{
+        font-size: 18px;
+    }
+}
+/*--end section ------------------------------------------------------------------------------------*/
+/*--start footer -----------------------------------------------------------------------------------*/
+.footer{
+    background-color: var(--BlueDarkColor);
+    padding-top: 200px;
+    position: relative;
+}
+.footer .container{
+    color: white;
+}
+.footer .container .content{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(150px ,1fr));
+    gap: 50px;
+}
+.footer .container .content .info{
+    grid-column: 1/3;
+}
+.footer .container .content .info div{
+    display: flex;
+    margin-bottom: 35px;
+}
+.footer .container .content .info div i{
+    margin-right: 15px;
+}
+.footer .container .content .info div span{
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
+.footer .container .content .about a,
+.footer .container .content .contact a{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 40px;
+}
+.footer .container .content .copyright{
+    grid-column: 5/7;
+}
+.footer .container .content .copyright div {
+    margin-bottom: 100px;
+}
+.footer .container .content .copyright div i{
+    margin-right: 10px;
+}
+.footer .container .content .copyright p{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+@media (max-width: 768px){
+    .footer .container .content{
+        display: block;
+    }
+    .footer .container .content .copyright{
+        text-align: center;
+    }
+    .footer .container .content .copyright div{
+        margin-bottom: 20px;
+    }
+}
+/*--end footer -------------------------------------------------------------------------------------*/
